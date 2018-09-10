@@ -9,14 +9,19 @@ jobs:
       - restore_cache:
           keys:
           - node_modules_{{ checksum "package.json" }}
-      - run: |
-        yarn install --production=false
-        yarn add ava tap-xunit --dev # only for circleci env
+      - run:
+          name: Install Dependencies
+          command: |
+            yarn install --production=false
       - save_cache:
           paths:
             - node_modules
           key: node_modules_{{ checksum "package.json" }}
-      - run: yarn run nyc --reporter=text ava --tap test/**/*.test.js | tap-xunit > ava.xml
-      - run: yarn run nyc report --reporter=text-lcov > coverage.lcov && yarn run codecov
-      - store_test_results:
-          path: ava.xml
+      - run:
+          name: Perform Tests
+          command: |
+            yarn run nyc --reporter=text ava --verbose test/**/*.test.js
+      - run:
+          name: Generate Code Coverage Report
+          command: |
+            yarn run nyc report --reporter=text-lcov > coverage.lcov && yarn run codecov
