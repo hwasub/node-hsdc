@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10-jessie
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node_modules_{{ checksum "package.json" }}
+      - run: yarn install --production=false
+      - save_cache:
+          paths:
+            - node_modules
+          key: node_modules_{{ checksum "package.json" }}
+      - run: yarn test
+      - run: yarn run nyc report --reporter=text-lcov > coverage.lcov && yarn run codecov
