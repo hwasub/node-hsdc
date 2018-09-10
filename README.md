@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/hwasub/node-hsdc/tree/master.svg?style=shield)](https://circleci.com/gh/hwasub/node-hsdc/tree/master) [![codecov](https://codecov.io/gh/hwasub/node-hsdc/branch/master/graph/badge.svg)](https://codecov.io/gh/hwasub/node-hsdc)
+
 # hsdc-js
 
 > port of HSDeckCode (previously written in PHP; closed-source) to node.js
