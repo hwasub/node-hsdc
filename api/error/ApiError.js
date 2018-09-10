@@ -1,6 +1,6 @@
 'use strict'
 
-var AppError = require('.')
+const AppError = require('.')
 
 class ApiError extends AppError {
   constructor (message) {
@@ -15,7 +15,7 @@ class NoDeckcodeError extends ApiError {
   constructor (message) {
     super(message)
     this.message = message || 'You have not requested any deckcode.'
-    this.code = 416
+    this.code = 400
   }
 }
 

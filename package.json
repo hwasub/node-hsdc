@@ -5,24 +5,42 @@
   "author": "Hwasub Lee <lee@hwasub.com>",
   "private": true,
   "scripts": {
-    "dev": "nodemon --watch api --exec \"nuxt\"",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt build && nuxt start",
+    "serve": "nuxt start",
     "precommit": "yarn run lint",
+    "api": "nodemon --watch api --exec \"node api/debugger\"",
+    "test": "nyc --reporter=text ava",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint-fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
+  "ava": {
+    "files": [
+      "test/**/*.test.js"
+    ],
+    "failFast": false
+  },
   "dependencies": {
+    "@nuxtjs/google-analytics": "^2.0.2",
     "axios": "^0.16.2",
+    "body-parser": "latest",
     "bulma": "^0.7.1",
+    "clipboard": "^2.0.1",
     "cross-env": "^5.0.1",
     "deckstrings": "^2.0.0",
     "express": "^4.15.3",
+    "file-saver": "^1.3.8",
+    "html2canvas": "^1.0.0-alpha.12",
+    "keen-ui": "^1.0.1",
+    "node-sass": "^4.9.3",
     "nuxt": "latest",
+    "nuxt-i18n": "^5.2.1",
     "promise": "^8.0.1",
-    "source-map-support": "^0.4.15"
+    "sass-loader": "^7.1.0"
   },
   "devDependencies": {
+    "ava": "^0.25.0",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
@@ -32,7 +50,9 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "node-sass": "^4.9.3",
-    "sass-loader": "^7.1.0"
+    "nodemon": "^1.18.4",
+    "nyc": "^13.0.1",
+    "source-map-support": "^0.4.15",
+    "supertest": "^3.2.0"
   }
 }

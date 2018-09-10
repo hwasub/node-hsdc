@@ -1,0 +1,30 @@
+{
+  "index": {
+    "placeholder": "Please copy-n-paste Hearthstone deckcode(s) here.",
+    "buttonShowDeck": "Show me the Deck!"
+  },
+  "footer": {
+    "osl": "Disclaimer"
+  },
+  "heroClass": {
+    "druid": "Druid",
+    "shaman": "Shaman",
+    "rogue": "Rogue",
+    "mage": "Mage",
+    "paladin": "Paladin",
+    "priest": "Priest",
+    "warlock": "Warlock",
+    "warrior": "Warrior",
+    "hunter": "Hunter"
+  },
+  "format": {
+    "standard": "Standard Format",
+    "wild": "Wild Format",
+    "unknown": "Unknown Format"
+  },
+
+  "Frontpage": "Frontpage",
+  "Go Back": "Go Back",
+  "Copy Code": "Copy Code",
+  "Save to PNG": "Save to PNG"
+}

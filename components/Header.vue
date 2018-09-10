@@ -1,13 +1,11 @@
 <template>
-  <section class="hero is-primary is-bold m-b-sm">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          Hearthstone Deckcode Tool
-        </h1>
+  <nav class="navbar m-b-sm">
+    <div class="container">
+      <div class="navbar-brand">
+        <nuxt-link class="navbar-item" :to="{path: '/'}"><img src="~/assets/svg/logo.svg" class="m-r-sm" alt="Logo" /> Hearthstone Deckcode Tool</nuxt-link>
       </div>
     </div>
-  </section>
+  </nav>
 </template>
 
 <style>

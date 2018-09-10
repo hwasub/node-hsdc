@@ -2,7 +2,7 @@
   <div class="__nuxt-error-page">
     <div class="error">
       <img src="~/assets/svg/error.svg" width="96" height="96">
-      <div class="title">{{ $t(message) }}</div>
+      <div class="title">{{ error.message }}</div>
       <p class="description m-t-xl">
         <nuxt-link class="button is-danger" to="/">Front Page</nuxt-link>
       </p>
@@ -11,27 +11,21 @@
 </template>
 
 <script>
+function camelize (str) {
+  return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function (letter, index) {
+    return index === 0 ? letter.toLowerCase() : letter.toUpperCase()
+  }).replace(/[\s+|-]/g, '')
+}
+
 export default {
-  name: 'error',
-  props: ['error'],
   layout: 'inform',
-  head () {
+  name: 'pushed-error',
+  data: function () {
     return {
-      title: this.message,
-      meta: [
-        {
-          name: 'viewport',
-          content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
-        }
-      ]
-    }
-  },
-  computed: {
-    statusCode () {
-      return (this.error && this.error.statusCode) || 500
-    },
-    message () {
-      return this.error.message || 'Something went wrong!'
+      error: {
+        message: camelize(this.$route.params.code),
+        code: 500
+      }
     }
   }
 }

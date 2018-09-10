@@ -1,0 +1,30 @@
+{
+  "index": {
+    "placeholder": "ここにハースストーンデッキコードをコピー＆ペーストしてください。",
+    "buttonShowDeck": "解析する"
+  },
+  "footer": {
+    "osl": "免責事項"
+  },
+  "heroClass": {
+    "druid": "ドルイド",
+    "shaman": "シャーマン",
+    "rogue": "ローグ",
+    "mage": "メイジ",
+    "paladin": "パラディン",
+    "priest": "プリースト",
+    "warlock": "ウォーロック",
+    "warrior": "ウォーリアー",
+    "hunter": "ハンター"
+  },
+  "format": {
+    "standard": "スタンダード",
+    "wild": "ワイルド",
+    "unknown": "Unknown Format"
+  },
+
+  "Frontpage": "フロントページ",
+  "Go Back": "戻る",
+  "Copy Code": "コピー",
+  "Save to PNG": "PNGに保存"
+}

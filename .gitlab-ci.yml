@@ -1,0 +1,15 @@
+stages:
+  - test
+
+test:
+  stage: test
+  # image: minisena/docker-puppeteer
+  image: node:10-alpine
+  script:
+    ## Install dependencies for node
+    - yarn install --production=false
+    ## Test
+    - yarn test
+  artifacts:
+    paths:
+      - .nyc_output/

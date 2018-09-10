@@ -1,9 +1,8 @@
+const i18nExtensions = require('vue-i18n-extensions')
+
 module.exports = {
-  /*
-  ** Headers of the page
-  */
   head: {
-    title: 'Hearthstone Deckcodes',
+    title: 'Hearthstone Deckcode Tools',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -13,18 +12,24 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  loading: { color: '#3B8070' },
+  loading: {
+    color: '#59A0E7',
+    height: '4px'
+  },
   plugins: [
-
+    {src: '~/plugins/keen-ui', ssr: false},
+    {src: '~/plugins/i18n', ssr: true}
   ],
   css: [
     '~/assets/css/main.scss'
   ],
-  /*
-  ** Add axios globally
-  */
+  modules: [
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-123983580-1'
+    }]
+  ],
   build: {
-    vendor: ['axios'],
+    vendor: ['axios', 'vue-i18n', 'clipboard', 'file-saver', 'html2canvas'],
     extractCSS: {
       allChunks: true
     },
@@ -49,44 +54,38 @@ module.exports = {
     }
   },
   router: {
+    linkExactActiveClass: 'is-link',
     scrollBehavior: function (to, from, savedPosition) {
-      // if the returned position is falsy or an empty object,
-      // will retain current scroll position.
-      let position = false
-    
-      // if no children detected
-      if (to.matched.length < 2) {
-        // scroll to the top of the page
-        position = { x: 0, y: 0 }
-      } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-        // if one of the children has scrollToTop option set to true
-        position = { x: 0, y: 0 }
-      }
-    
-      // savedPosition is only available for popstate navigations (back button)
+      let position = { }
       if (savedPosition) {
         position = savedPosition
+      } else {
+        position = { x: 0, y: 0 }
+        if (to.hash) {
+          position = { selector: to.hash }
+        }
       }
-    
-      return new Promise(resolve => {
-        // wait for the out transition to complete (if necessary)
-        window.$nuxt.$once('triggerScroll', () => {
-          // coords will be used if no selector is provided,
-          // or if the selector didn't match any element.
-          if (to.hash && document.querySelector(to.hash)) {
-            // scroll to anchor by returning the selector
-            position = { selector: to.hash }
-          }
-          resolve(position)
-        })
-      })
+
+      return position
     },
     extendRoutes (routes, resolve) {
       routes.push({
-        name: 'codeview',
-        path: '/:deckcode+',
-        component: resolve(__dirname, 'pages/codeparse.vue')
+        name: 'route-pushed-error',
+        path: '/error/:code',
+        component: resolve(__dirname, 'pages/pushed-error.vue')
+      },
+      {
+        name: 'route-parse-list',
+        path: '/:deckcode(AAE[B|C].+)',
+        component: resolve(__dirname, 'pages/parse-list.vue')
       })
+    }
+  },
+  render: {
+    bundleRenderer: {
+      directives: {
+        t: i18nExtensions.directive
+      }
     }
   },
   serverMiddleware: [

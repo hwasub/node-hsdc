@@ -1,5 +1,15 @@
 @import './bulma.scss';
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
 #sectioncontainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
