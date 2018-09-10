@@ -2,7 +2,7 @@
 
 # hsdc-js
 
-> port of HSDeckCode (previously written in PHP; closed-source) to node.js
+> port of HSDeckCode (previously written in PHP) to node.js
 
 ## Build
 
@@ -13,7 +13,7 @@ $ docker build -t hsdcjs .
 # Run, or Deploy
 $ docker run --rm -it -d -p 80:3000 hsdcjs
 
-# then navigate to http://localhost:3000
+# then navigate to http://localhost:80
 ```
 
 OR,
@@ -38,8 +38,8 @@ $ yarn start # (it will build then serve)
 
 ## License
 
-This software is released under the Mozilla Public Lincense 2.0. See LICENSE for futher information.
+(c) 2018 Hwasub Lee. All rights reserved. This software is released under the Mozilla Public Lincense 2.0. See LICENSE for futher information.
 
-## Copyright
+## Disclaimer
 
-(c) 2018 Hwasub Lee. All rights reserved.
+Hearthstone is a trademark or registered trademark of Blizzard Entertainment, Inc., in the U.S. and/or other countries. I and other contributors are not affiliated with Blizzard Entertainment. Some files in this software may contain data that are copyrighted by Blizzard Entertainment.
