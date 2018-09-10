@@ -1,22 +1,17 @@
 <template>
   <v-app>
     <Header/>
-
-    <nuxt/>
-
-    <Footer/>
+    <nuxt />
   </v-app>
 </template>
 
 <script>
 import Header from '~/components/Header.vue'
-import Footer from '~/components/Footer.vue'
 
 export default {
-  name: 'defaultLayout',
+  name: 'informationLayout',
   components: {
-    Header,
-    Footer
+    Header
   }
 }
 </script>

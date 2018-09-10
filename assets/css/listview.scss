@@ -1,0 +1,173 @@
+.list-list-box {
+    min-width: 310px;
+}
+
+.list-cardsContainer {
+    width: 310px;
+    font-size: 14px;
+}
+
+.list-cardEntry {
+    background-color: rgb(55, 55, 55);
+    width: 100%;
+    height: 26px;
+    margin-bottom: 1px;
+    position: relative;
+}    
+
+.list-cost {
+    width: 26px;
+    height: 26px;
+    
+    position: absolute;
+    left: 0px;
+
+    font-weight: 800;
+    font-size: 16px;
+
+    line-height: 26px;
+    text-align: center;
+    vertical-align: center;
+
+    background-color: #D7BA7D;
+    color: #000;
+}
+
+.list-name {
+    padding-left: 10px;
+    height: 26px;
+
+    overflow: visible;
+
+    line-height: 26px;
+    text-align: center;
+    vertical-align: center;
+
+    position: absolute;
+    left: 26px;
+    color: #EFEFEF;
+}
+
+.list-image {
+    position: absolute;
+    left: 180px;
+    height: 26px;
+    overflow: hidden;
+}
+
+.list-fade {
+    position: absolute;
+    width: 130px;
+    left: 170px;
+    height: 26px;
+    background: linear-gradient(
+        70deg,
+        rgba(55, 55, 55, 1) 0%,
+        rgba(55, 55, 55, 1) 35%,
+        rgba(55, 55, 55, 0) 55%,
+        rgba(55, 55, 55, 0) 100%
+    );
+}
+
+.list-count {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 284px;
+    font-size: 16px;
+    background-color: #1E1E1E;
+    color: #D7BA7D;
+    line-height: 26px;
+    text-align: center;
+    vertical-align: center;
+    font-weight: 800;
+}
+
+.list-dust {
+    text-align: right;
+    font-weight: 800;
+    height: 26px;
+    overflow: hidden;
+}
+
+.free {
+    color: #FFFFFF;
+}
+
+.common {
+    color: #FFFFFF;
+}
+
+.rare {
+    color: #4685FF;
+}
+
+.epic {
+    color: #AF0DFF;
+}
+
+.legendary {
+    color: #FA9632;
+}
+
+.list-card-header {
+    height: 55px;
+    margin-bottom: 3px;
+
+    background-color: rgb(55, 55, 55);
+    position: relative;
+}
+
+.list-hero-class-icon img {
+    width: 55px;
+    height: 55px;
+}
+
+.list-hero-class-icon {
+    width: 55px;
+    height: 55px;
+    margin-right: 10px;
+}
+
+.list-hero-class-name {
+    position: absolute;
+    left: 65px;
+    font-size: 20px;
+    font-size: 1.4vm;
+    top: 2px;
+    font-weight: 800;
+    color: #EFEFEF;
+}
+
+.list-game-format {
+    position: absolute;
+    left: 65px;
+    top: 32px;
+    font-weight: 800;
+    color: #EFEFEF;
+}
+
+.list-deck-price {
+    position: absolute;
+    top: 30px;
+    right: 4px;
+    font-size: 16px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    vertical-align: center;
+
+    font-weight: 800;
+    color: #EFEFEF;
+}
+
+.list-deck-price img {
+    width: 13px;
+    height: 18px;
+}
+
+.list-buttonContainer {
+    width: 350px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

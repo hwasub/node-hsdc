@@ -11,13 +11,3 @@ class AppError extends Error {
 }
 
 module.exports = AppError
-
-class NotFoundError extends AppError {
-  constructor (message) {
-    super(message)
-    this.message = message || 'Not Found'
-    this.code = 404
-  }
-}
-
-module.exports.NotFoundError = NotFoundError

@@ -1,0 +1,30 @@
+{
+  "index": {
+    "placeholder": "이곳에 덱코드를 입력하세요. 여러 개를 동시에 입력해도 됩니다.",
+    "buttonShowDeck": "덱 목록 보기"
+  },
+  "footer": {
+    "osl": "오픈소스 라이선스"
+  },
+  "heroClass": {
+    "druid": "드루이드",
+    "shaman": "주술사",
+    "rogue": "도적",
+    "mage": "마법사",
+    "paladin": "성기사",
+    "priest": "사제",
+    "warlock": "흑마법사",
+    "warrior": "전사",
+    "hunter": "사냥꾼"
+  },
+  "format": {
+    "standard": "정규전 덱",
+    "wild": "야생전 덱",
+    "unknown": "알 수 없음"
+  },
+
+  "Frontpage": "초기화면",
+  "Go Back": "이전화면",
+  "Copy Code": "코드 복사",
+  "Save to PNG": "PNG로 저장"
+}
